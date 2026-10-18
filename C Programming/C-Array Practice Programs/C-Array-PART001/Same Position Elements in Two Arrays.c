@@ -1,0 +1,9 @@
+#include <stdio.h>
+int main() {
+    int n, i, a[50], b[50];
+    scanf("%d", &n);
+    for (i = 0; i < n; i++) scanf("%d", &a[i]);
+    for (i = 0; i < n; i++) scanf("%d", &b[i]);
+    for (i = 0; i < n; i++) printf("%d %d\n", a[i], b[i]);
+    return 0;
+}
