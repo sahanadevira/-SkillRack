@@ -1,0 +1,70 @@
+Elements with Adjacent Even Elements
+
+The program must accept a positive integer array of size N as the input. The program must print the element only if its adjacent elements are even. Else the program must print -1 as the output.
+
+ The first and the last element have only one adjacent element. The program must print the element only if its adjacent element is even. Else the program must print -1.
+
+Boundary Condition(s):
+3 <= N <= 100
+
+1 <= Each element <= 999
+
+Example Input/Output 1:
+
+**Input:**
+
+5
+3 4 5 6 7
+
+
+**Output:**
+
+3 -1 5 -1 7
+
+
+ Example Input/Output 2:
+
+**Input:**
+
+8
+24 78 99 89 176 63 780 54
+
+
+**Output:**
+
+24 -1 -1 -1 -1 63 -1 54
+
+
+Max Execution Time Limit:
+2000 milliseconds
+
+Solution:
+#include <stdio.h>
+
+int main()
+{
+    int n;
+    scanf("%d", &n);
+
+    int arr[n];
+
+    for(int i = 0; i < n; i++)
+    {
+        scanf("%d", &arr[i]);
+    }
+
+    for(int i = 0; i < n; i++)
+    {
+        if((i == 0 || arr[i-1] % 2 == 0) &&
+           (i == n-1 || arr[i+1] % 2 == 0))
+        {
+            printf("%d ", arr[i]);
+        }
+        else
+        {
+            printf("-1 ");
+        }
+    }
+
+    return 0;
+}
